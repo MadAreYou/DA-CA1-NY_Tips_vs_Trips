@@ -4,6 +4,16 @@ Data Analytics CA1 project (NYC Yellow Taxi 2024 × NOAA Weather 2024)
 Author: **Juraj Madzunkov**  
 Sections: **C  Data Preparation** and **D  Advanced Analysis**
 
+## Research questions and findings (executive story)
+
+- RQ1 — Trip spatial and time patterns: Longer or slower trips tend to earn higher tips. Short, quick hops earn less. Where a trip starts and ends also matters: airport‑ and nightlife‑adjacent areas skew higher, while some commuter zones skew lower.
+
+- RQ2 — Temporal factors: Tipping follows a daily rhythm—early‑morning hours perform best, the evening commute is softer. Weekends are generally more generous than weekdays, and fall edges out winter. Weather matters but its signal is smaller than everyday timing patterns.
+
+- RQ3 — Fare components within similar trips: Even comparing like‑for‑like trips (similar distance and duration), the presence of tolls, congestion surcharges, or an airport fee aligns with higher tips, with the strongest lift typically on tolled routes. These markers capture trip context (airport runs, heavy traffic, express routes) that riders seem to value.
+
+Taken together, tipping reflects perceived time, context, and purpose of a ride. Longer or more involved trips, airport connections, tolled routes, and off‑peak/weekend travel align with more generous tipping. This suggests practical guidance for drivers (airport windows, early‑morning/weekend demand, routes likely to include express/tolled segments) and for operators (surfacing guidance, setting expectations in‑app, and aligning incentives where tipping potential is structurally higher).
+
 ## Overview
 
 This repository delivers an end‑to‑end analysis of tipping behavior using a joined dataset of NYC Yellow Taxi trips (2024) and hourly NYC weather (NOAA 2024). The workflow is implemented in four notebooks that: ingest and join data, clean/normalize, run QC, and perform EDA aligned to the three research questions (RQ1–RQ3). The final notebook saves report‑ready figures, tables, and markdown blocks.
@@ -149,16 +159,6 @@ Notes
 - TLC × NOAA merged rows: 41,169,720
 - Numeric weather columns match NOAA per hour across intersecting hours (share_equal = 1.0; max abs diffs at floating‑point noise).
 - Invariants hold: rows without matching weather hour have all weather columns null; matched rows have weather populated where available.
-
-## Research questions and findings (executive story)
-
-- RQ1 — Trip spatial and time patterns: Longer or slower trips tend to earn higher tips. Short, quick hops earn less. Where a trip starts and ends also matters: airport‑ and nightlife‑adjacent areas skew higher, while some commuter zones skew lower.
-
-- RQ2 — Temporal factors: Tipping follows a daily rhythm—early‑morning hours perform best, the evening commute is softer. Weekends are generally more generous than weekdays, and fall edges out winter. Weather matters but its signal is smaller than everyday timing patterns.
-
-- RQ3 — Fare components within similar trips: Even comparing like‑for‑like trips (similar distance and duration), the presence of tolls, congestion surcharges, or an airport fee aligns with higher tips, with the strongest lift typically on tolled routes. These markers capture trip context (airport runs, heavy traffic, express routes) that riders seem to value.
-
-Taken together, tipping reflects perceived time, context, and purpose of a ride. Longer or more involved trips, airport connections, tolled routes, and off‑peak/weekend travel align with more generous tipping. This suggests practical guidance for drivers (airport windows, early‑morning/weekend demand, routes likely to include express/tolled segments) and for operators (surfacing guidance, setting expectations in‑app, and aligning incentives where tipping potential is structurally higher).
 
 ## Outputs
 
